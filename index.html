@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Corrida</title>
+</head>
+<body>
+    <header>
+        <h1>Jogo de luta</h1>
+        <p>Para participar digite o Nome e o poder de atque para derrotar o inimigo</p>
+    </header>
+    <main>
+        <section>
+            <p>
+                <label for="name-character1">Personagem</label>
+                <input type="text" name="name-character1" id="name-character1">
+                <label for="atk">Power ATK</label>
+                <input type="text" name="atk" id="atk">
+            </p>
+            <hr>
+            <p>
+                Venon | Defesa: 500 | Escudo: 250 | 5000Ph
+            </p>
+            <hr>
+            <p>
+                <input type="button" value="verificar"  onclick="enter()">
+            </p>
+        </section>
+        <div id="res"></div>
+        <div id="resposta"></div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
