@@ -13,24 +13,35 @@
         <p>Para participar digite o Nome e o poder de atque para derrotar o inimigo</p>
     </header>
     <main>
-        <section>
-            <p>
-                <label for="name-character1">Personagem</label>
-                <input type="text" name="name-character1" id="name-character1">
-                <label for="atk">Power ATK</label>
-                <input type="text" name="atk" id="atk">
-            </p>
-            <hr>
-            <p>
-                Venon | Defesa: 500 | Escudo: 250 | 5000Ph
-            </p>
-            <hr>
-            <p>
-                <input type="button" value="verificar"  onclick="enter()">
-            </p>
-        </section>
-        <div id="res"></div>
-        <div id="resposta"></div>
+        <div id="container">
+            <section>
+                <div id="character-principal">
+                    <div id="character">
+                        <h2>Pesonagem 1</h2>
+                        <span>
+                            <label for="name-character1">Personagem</label>
+                            <input type="text" name="name-character1" id="name-character1">
+                        </span>
+                        <span>
+                            <label for="atk">Power ATK</label>
+                            <input type="text" name="atk" id="atk">
+                        </span>
+                    </div>
+                </div>
+                <div id="vilao">
+                    <p>
+                        Venon
+                    </p>
+                    <img src="./venon.jpg" alt="venon persongem vilão">
+                    <p>
+                        Defesa: 500 | Escudo: 250 | 5000Ph
+                    </p>
+                </div>
+                    <span id="lutar"><input type="button" value="verificar"  onclick="enter()"></span>
+            </section>
+            <div id="res"></div>
+            <div id="resposta"></div>
+        </div>
     </main>
     <script src="index.js"></script>
 </body>
