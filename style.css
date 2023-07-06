@@ -172,9 +172,10 @@ img {
 }
 
 #res {
+    display: none;
     position: absolute;
     background-color: #000080;
-    color: white;
+    color: white;   
     width: 350px;
     height: 350px;
     border-radius: 10px;
@@ -185,6 +186,7 @@ img {
 }
 
 #resposta {
+    display: none;
     position: absolute;
     left: 39.9%;
     top: 190%;
