@@ -179,7 +179,7 @@ img {
     width: 350px;
     height: 350px;
     border-radius: 10px;
-    left: 39.9%;
+    left: 30%;
     top: 8%;
     padding: 10px;
     box-shadow: 0.5px 1px 0.5px rgba(0, 0, 0, 0.305);
@@ -188,9 +188,13 @@ img {
 #resposta {
     display: none;
     position: absolute;
-    left: 39.9%;
+    left: 30%;
     top: 190%;
     color: white;
     width: 350px;
     height: 350px;
+}
+
+#atks {
+    display: none;
 }
