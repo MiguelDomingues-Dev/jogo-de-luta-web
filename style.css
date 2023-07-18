@@ -49,6 +49,7 @@ section {
     background-color: #000080;
     width: 350px;
     height: 350px;
+    left: -98px;
     border-radius: 10px;
 }
 
@@ -179,7 +180,7 @@ img {
     width: 350px;
     height: 350px;
     border-radius: 10px;
-    left: 30%;
+    left: 35%;
     top: 8%;
     padding: 10px;
     box-shadow: 0.5px 1px 0.5px rgba(0, 0, 0, 0.305);
@@ -188,7 +189,7 @@ img {
 #resposta {
     display: none;
     position: absolute;
-    left: 30%;
+    left: 35%;
     top: 190%;
     color: white;
     width: 350px;

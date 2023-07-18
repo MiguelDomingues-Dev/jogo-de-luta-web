@@ -14,6 +14,21 @@ function calcularDano(powerAtaqueUSer) {
         }
 }
 
+
+function imgResposta( ) {
+        const resImg = document.getElementById('res-img')
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (vilao.shield == 0) {
+                img.setAttribute('src', 'burns.jpg')
+        } else if (vilao.defesa == 0) {
+                img.setAttribute('src', 'burns.jpg')
+        } else if (vilao.vida == 0) {
+                img.setAttribute('src', 'homer.jpg')
+        }
+        resImg.appendChild(img)
+}
+
 //criação das variaveis das resposta do programa
 //Função para processeguir o procedimento de ataque e subtrair uma por uma em cada variavel e com base na sobra ele desconta na proxima variavel
 function lutem(powerAtaqueUSer) {
@@ -21,14 +36,11 @@ function lutem(powerAtaqueUSer) {
         const res2 = document.getElementById('resposta')
         const vel = document.getElementById('vilao')
         const char = document.getElementById('name-character1').value
-        let img = document.createElement('img')
-        img.setAttribute('id', 'foto')
         if (vilao.shield >= powerAtaqueUSer && res.style.display == 'none' && res2.style.display == 'none' && vel.style.display == 'block') {
                 vilao.shield -= powerAtaqueUSer
                 res.style.display = 'block'
                 res2.style.display = 'block'
                 vel.style.display = 'none'
-                img.setAtribute('src', 'burns.jpg')
                 console.log(`${powerAtaqueUSer} ${vilao.shield}`)
                 res.innerHTML = `O heroi ${char} com um poder de ${powerAtaqueUSer} ainda não conseguiu derrotar o Boss`
                 res2.innerText = `${powerAtaqueUSer} ${vilao.shield}`
@@ -71,14 +83,14 @@ function lutem(powerAtaqueUSer) {
         }
         res.style.textAlign = 'center'    
         res2.style.textAlign = 'center'
-        res.appendChild(img)
 }
 
 //Função criada para puxar as outras funções e criar a ação de click no botom do doc HTML e executar o código.
 function enter() {
         const powerAtaqueUSer = parseInt(document.getElementById('atk').value)
-        lutem(powerAtaqueUSer)
+        imgResposta(powerAtaqueUSer)
         calcularDano(powerAtaqueUSer)
+        lutem(powerAtaqueUSer)
 } 
 
-
+window.onload = imgResposta
