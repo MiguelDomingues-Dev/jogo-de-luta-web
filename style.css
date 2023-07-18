@@ -166,7 +166,7 @@ img {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-65%, 15%);
     width: 150px;
     height: 150px;
     border-radius: 5px;

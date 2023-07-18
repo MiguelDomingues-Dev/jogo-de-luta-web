@@ -15,23 +15,22 @@ function calcularDano(powerAtaqueUSer) {
 }
 
 
-function imgResposta( ) {
-        const resImg = document.getElementById('res-img')
-        var img = document.createElement('img')
-        img.setAttribute('id', 'foto')
-        if (vilao.shield == 0) {
-                img.setAttribute('src', 'burns.jpg')
-        } else if (vilao.defesa == 0) {
-                img.setAttribute('src', 'burns.jpg')
-        } else if (vilao.vida == 0) {
-                img.setAttribute('src', 'homer.jpg')
-        }
-        resImg.appendChild(img)
-}
 
 //criação das variaveis das resposta do programa
 //Função para processeguir o procedimento de ataque e subtrair uma por uma em cada variavel e com base na sobra ele desconta na proxima variavel
 function lutem(powerAtaqueUSer) {
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        function imgResposta(img) {
+                const resImg = document.getElementById('res-img')
+                if (vilao.shield == 0) {
+                        img.setAttribute('src', 'burns.jpg')
+                } else if (vilao.defesa == 0) {
+                        img.setAttribute('src', 'homer.jpg')
+                }
+                resImg.appendChild(img)
+                resImg.style.alignItems = 'center'
+        }
         const res = document.getElementById('res')
         const res2 = document.getElementById('resposta')
         const vel = document.getElementById('vilao')
@@ -83,14 +82,13 @@ function lutem(powerAtaqueUSer) {
         }
         res.style.textAlign = 'center'    
         res2.style.textAlign = 'center'
+        imgResposta(img)
 }
 
 //Função criada para puxar as outras funções e criar a ação de click no botom do doc HTML e executar o código.
 function enter() {
         const powerAtaqueUSer = parseInt(document.getElementById('atk').value)
-        imgResposta(powerAtaqueUSer)
         calcularDano(powerAtaqueUSer)
         lutem(powerAtaqueUSer)
 } 
 
-window.onload = imgResposta
