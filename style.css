@@ -1,197 +1,267 @@
 @charset "UTF-8";
+@font-face {
+    font-family: "retro";
+    src: url(./font/Retro\ Gaming.ttf) format(truetype);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: "retro";  
 }
 
-body {
-    background-color: #2e6dd1;
+body, html {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 21.875rem;
+    background-image: url(./image/fundo-luta-wd.jpg);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
-header {
-    background-color: white;
+.box-lutador {
     position: relative;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    padding: 10px;
-}
-
-header > p {
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-#container {
-    position: relative;
-    top: 150%;
-    left: 62%;
-    transform: translate(-50%, 20%);
-}
-
-section {
-    position: relative;
-    width: 500px;
-    height: 150px;
-    text-align: center;
-    padding: 10px;
-}
-
-#character-principal {
     display: flex;
-    position: relative;
-    background-color: #000080;
-    width: 350px;
-    height: 350px;
-    left: -98px;
-    border-radius: 10px;
+    justify-content: flex-end;
+    flex-direction: row;
+    left: 391px;
+    width: 6.875rem;
+    height: 4.9375rem;
 }
 
-#character {
-    position: relative;
-    left: 20px;
-    top: 30px;
-}
-
-#character > h2 {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
+.text-number-user {
+    position: absolute;
+    width: 2.625rem;
+    height: 1.5625rem;
+    color: #FFF;
     text-align: center;
-    color: white;
+    font-family: "retro"; 
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-#character > label {
-    color: #ffffff;
-}
-
-#character > span:nth-last-of-type(1) {
+.lutador-user {
     position: absolute;
-    top: 130px;
-    left: -20px;
-    width: 250px;
-    font-size: 20px;
-    color: white;
-}
-
-#character > span:nth-last-of-type(2) {
-    position: absolute;
-    top: 90px;
-    left: -10px;
-    width: 250px;
-    font-size: 20px;
-    color: white;
-}
-
-input {
-    width: 100px;    
-    margin-left: 10px;
-    top: 50px;
-    border-radius: 5px;
-    border: none;
-}
-
-#vilao {
     display: flex;
-    position: relative;
-    background-color: #000080;
-    padding: 10px;
-    width: 350px;
-    height: 350px;
-    border-radius: 10px;
-    left: 80%;
-    top: -267%;
-    box-shadow: 0.5px 1px 0.5px rgba(0, 0, 0, 0.305);
-}
-
-#vilao > p:nth-last-of-type(1) {
-    position: absolute;
-    color: white;
-    left: 50%;
-    top: 80%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-}
-
-#vilao > p:nth-last-of-type(2) {
-    position: absolute;
-    color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -370%);
-    width: 450px;
-    font-size: 27px;
-    font-weight: 800;
+    flex-direction: row;
+    background: lightgray 0px -0.144px / 88.333% 100.364% no-repeat;
+    border: 1px solid #FFFfff;
+    width: 6.875rem;
+    height: 4.9375rem;
+    left: -63px;
 }
 
 img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
+    width: 6.875rem;
+    height: 4.9375rem;
 }
 
-#lutar {
+.barra-vida {
+    width: 12.9375rem;
+    height: 0.4375rem;
+    background-color: #91caf7;
+    fill: #91CAF7;
+    stroke-width: 1px;
+    stroke: #FFF;
+    position: absolute;
+    left: 47px;
+    top: 29px;
+    border-bottom-right-radius: 25px;
+}
+
+
+.name-do-user-hero > input {
+    position: absolute;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 2px solid white;
+    left: 49px;
+    top: 61px;
+    color: white;
+    font-size: 1.5rem;
+    width: 10.75rem;
+    height: 1.1875rem;
+}
+
+.box-lutador2 {
     position: relative;
-    left: 28%;
-    top: -220%;
-    transform: translate(50%, 50%);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    left: 392px;
+    width: 6.875rem;
+    height: 4.9375rem;
 }
 
-#lutar > input {
-    width: 150px;
-    height: 30px;
-    border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    background-color: #000080;
-    color: white;
-    cursor: pointer;
+.box-lutador2 > .lutador-user {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background: lightgray 0px -0.144px / 88.333% 100.364% no-repeat;
+    border: 1px solid #FFFfff;
+    width: 6.875rem;
+    height: 4.9375rem;
+    left: 528px;
+    top: -80px;
 }
 
-#lutar > input:hover {
-    background-color: #004280;
+.box-lutador2 > .lutador-user > img {
+    width: 6.875rem;
+    height: 4.9375rem;
 }
 
-#foto {
+.barra-vida2 {
+    width: 12.9375rem;
+    height: 0.4375rem;
+    background-color: #91caf7;
+    fill: #91CAF7;
+    stroke-width: 1px;
+    stroke: #FFF;
+    position: absolute;
+    left: 321px;
+    top: -50px;
+    border-bottom-left-radius: 25px;
+}
+
+.name-vilao {
+    position: absolute;
+    left: 345px;
+    top: -27px;
+    color: #FFF;
+    text-align: center;
+    font-family: "retro"; 
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 10.75rem;
+    height: 1.1875rem;
+    text-decoration: underline white;
+}
+
+.barra-bottom {
+    position: absolute;
+    left: 400px;
+    top: -22px;
+    border-bottom: 2px solid #FFFfff;
+}
+
+.text-number-vilao {
+    position: absolute;
+    top: -80px;
+    left: 462px;
+    width: 2.625rem;
+    height: 1.5625rem;
+    color: #FFF;
+    text-align: center;
+    font-family: "retro"; 
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.vesus-lutem {
+    position: absolute;
+    left: 626px;
+    top: 1px;
+    width: 6.6875rem;
+    height: 3.4375rem;
+    background: linear-gradient(180deg, #91CAF7 0%, #2DB63A 97.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: "retro"; 
+    font-size: 3.1875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#container, .content-lutadores {
+    position: relative;
+    display: flex;
+}
+
+.box-jogador-user {
+    position: relative;
+    display: flex;
+    width: 500px;
+}
+
+.lutador-user-hype {
+    position: absolute;
+    left: 380px;
+    top: -38px;
+}
+
+.lutador-user-hype > img {
+    width: 15.875rem;
+    height: 11.40113rem;
+}
+
+.box-jogador-robo {
+    position: relative;
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+.lutador-robo-hype {
+    position: absolute;
+    left: 720px;
+    top: -48px;
+}
+
+.lutador-robo-hype > img {
+    width: 15.875rem;
+    height: 13.8125rem;
+}
+
+.power-ataque {
+    position: absolute;
+    left: 380px;
+    top: 162px;
+}
+
+.power-ataque > input {
+    width: 16.1875rem;
+    height: 1.125rem;
+    border: 1px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+}
+
+.lutem-butom-batalhar {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-65%, 15%);
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
+    transform: translate(-20%, -95%);
+    width: 250px;
+    height: 250px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 1s;
+    background: linear-gradient(180deg, #ff4d00 0%, #000000 97.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-#res {
-    display: none;
-    position: absolute;
-    background-color: #000080;
-    color: white;   
-    width: 350px;
-    height: 350px;
-    border-radius: 10px;
-    left: 35%;
-    top: 8%;
-    padding: 10px;
-    box-shadow: 0.5px 1px 0.5px rgba(0, 0, 0, 0.305);
-}
-
-#resposta {
-    display: none;
-    position: absolute;
-    left: 35%;
-    top: 190%;
-    color: white;
-    width: 350px;
-    height: 350px;
+.lutem-butom-batalhar:hover {
+    background: linear-gradient(180deg, #f56d33 0%, #000000 97.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

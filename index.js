@@ -5,7 +5,6 @@ const vilao = {
         shield: 250
 }
 
-
 //Função para calcular quando o usuario digitar o valor total, dá soma entre a vida, defesa e escudo do vilão
 function calcularDano(powerAtaqueUSer) {
         const poderTotal = vilao.vida + vilao.defesa + vilao.shield
@@ -13,8 +12,6 @@ function calcularDano(powerAtaqueUSer) {
                 console.log(`Ataque fatal! Vilão derrotado instantaneamente!`)
         }
 }
-
-
 
 //criação das variaveis das resposta do programa
 //Função para processeguir o procedimento de ataque e subtrair uma por uma em cada variavel e com base na sobra ele desconta na proxima variavel

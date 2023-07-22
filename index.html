@@ -9,39 +9,59 @@
 </head>
 <body>
     <header>
-        <h1>Jogo de luta</h1>
-        <p>Para participar digite o Nome e o poder de atque para derrotar o inimigo</p>
+    <div id="container-box-game">
+        <div class="content-box-game">
+            <div class="box-lutador">
+                <span class="text-number-user">
+                    1P
+                </span>
+                <span class="lutador-user">
+                    <img src="./image/streetfigh_vrycbd4w.gif" alt="Imagem de um lutador dos Anos 80">
+                </span>
+                <span class="barra-vida"></span>
+                <span class="name-do-user-hero">
+                    <input type="text" name="name-character1" id="name-character1">
+                </span>
+            </div>
+            <span class="vesus-lutem">
+                VS
+            </span>
+            <div class="box-lutador2">
+                <span class="text-number-vilao">
+                    2P
+                </span>
+                <span class="lutador-user">
+                    <img src="./image/venom-blackstance-2.gif" alt="Imagem de um vilão da marvel">
+                </span>
+                <span class="barra-vida2"></span>
+                <span class="name-vilao">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVENOM
+                </span>
+                <span class="barra-bottom"></span>
+            </div>
+        </div>
+    </div>
     </header>
     <main>
         <div id="container">
-            <section>
-                <div id="character-principal">
-                    <div id="character">
-                        <h2>Pesonagem 1</h2>
-                        <span>
-                            <label for="name-character1">Personagem</label>
-                            <input type="text" name="name-character1" id="name-character1">
-                        </span>
-                        <span>
-                            <label for="atk">Power ATK</label>
-                            <input type="number" name="atk" id="atk">
-                        </span>
-                    </div>
+            <div class="contet-lutadores">
+                <div class="box-jogador-user">
+                    <span class="lutador-user-hype">
+                        <img src="./image/streetfigh_vrycbd4w.gif" alt="Imagem de um lutador dos Anos 80">
+                    </span>
+                    <span class="power-ataque">
+                        <input placeholder="POWER" type="text" name="atk" id="atk">
+                    </span>
                 </div>
-                <div id="vilao">
-                    <p>
-                        Venon
-                    </p>
-                    <img src="./venon.jpg" alt="venon persongem vilão">
-                    <p>
-                        Defesa: 500 | Escudo: 250 | 5000Ph
-                    </p>
+                <span class="lutem-butom-batalhar" onclick="enter()">
+                    LUTEM
+                </span>
+                <div class="box-jogador-robo">
+                    <span class="lutador-robo-hype">
+                        <img src="./image/venom-blackstance-2.gif" alt="Imagem de um vilão da marvel">
+                    </span>
                 </div>
-                <span id="lutar"><input type="button" value="verificar"  onclick="enter()"></span>
-            </section>
-            <div id="res"></div>
-            <div id="resposta"></div>
-            <div id="res-img"></div>
+            </div>
         </div>
     </main>
     <script src="index.js"></script>
