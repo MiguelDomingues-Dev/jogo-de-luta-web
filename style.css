@@ -20,7 +20,7 @@ body, html {
     width: 100vw;
     height: 21.875rem;
     background-image: url(./image/fundo-luta-wd.jpg);
-    background-size: auto;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -119,14 +119,15 @@ img {
     height: 4.9375rem;
 }
 
-.barra-vida2 {
+#barra-vida2 {
+    position: absolute;
+    display: block;
     width: 12.9375rem;
     height: 0.4375rem;
     background-color: #91caf7;
     fill: #91CAF7;
     stroke-width: 1px;
     stroke: #FFF;
-    position: absolute;
     left: 321px;
     top: -50px;
     border-bottom-left-radius: 25px;
@@ -232,6 +233,8 @@ img {
     position: absolute;
     left: 380px;
     top: 162px;
+    width: 16.1875rem;
+    height: 1.125rem;
 }
 
 .power-ataque > input {
@@ -246,13 +249,12 @@ img {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-20%, -95%);
+    transform: translate(-20%, -480%);
     width: 250px;
-    height: 250px;
+    height: 50px;
     font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
-    transition: 1s;
     background: linear-gradient(180deg, #ff4d00 0%, #000000 97.92%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -264,4 +266,98 @@ img {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#barra-vida-3 {
+    display: none;
+    position: absolute;
+    width: 12.9375rem;
+    height: 0.4375rem;
+    background: linear-gradient(to left, #91CAF7 75%, #ffffff26 50%);
+    fill: #91CAF7;
+    stroke-width: 1px;
+    stroke: #FFF;
+    left: 713px;
+    top: 29px;
+    border-bottom-left-radius: 25px;
+}
+
+#barra-vida-4 {
+    display: none;
+    position: absolute;
+    width: 12.9375rem;
+    height: 0.4375rem;
+    background: linear-gradient(to left, #91CAF7 55%, #ffffff26 50%);
+    fill: #91CAF7;
+    stroke-width: 1px;
+    stroke: #FFF;
+    left: 713px;
+    top: 29px;
+    border-bottom-left-radius: 25px;
+}
+
+#barra-vida-5 {
+    display: none;
+    position: absolute;
+    width: 12.9375rem;
+    height: 0.4375rem;
+    background-color: #ffffff22;
+    border: 1px solid #000000;
+    fill: #91CAF7;
+    stroke-width: 1px;
+    stroke: #FFF;
+    left: 713px;
+    top: 29px;
+    border-bottom-left-radius: 25px;
+}
+
+#ryu-user-soco {
+    position: absolute;
+    display: none;
+    width: 25.875rem;
+    height: 12.40113rem;
+    left: 420px;
+    top: -44px;
+    background-image: url(image-frame/ryump-1.png);
+    background-repeat: no-repeat;
+    background-size: 19.875rem;
+    animation: luta 900ms steps(8) infinite;
+}
+
+@keyframes luta {
+    0% {
+        background-image: url(./image-frame/ryump-1.png);
+    }
+    15% {
+        background-image: url(./image-frame/ryump-2.png);
+    }
+    30% {
+        background-image: url(./image-frame/ryump-3.png);
+    }
+    45% {
+        background-image: url(./image-frame/ryump-4.png);
+    }
+    60% {
+        background-image: url(./image-frame/ryump-5.png);
+    }
+    75% {
+        background-image: url(./image-frame/ryump-6.png);
+    }
+    90% {
+        background-image: url(./image-frame/ryump-7.png);
+    }
+    105% {
+        background-image: url(./image-frame/ryump-8.png);
+    }
+}
+
+#escudo-defender {
+    position: absolute;
+    left: 720px;
+    top: -48px;
+}
+
+#escudo-defender > img {
+    width: 15.875rem;
+    height: 13.8125rem;
 }
