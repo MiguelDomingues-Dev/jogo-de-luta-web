@@ -6,20 +6,37 @@ function reproduzirComAudio() {
         audioSoco.play()
 }
 
-const audioVictory = document.getElementById('audioVictory')
-audioVictory = true
-function reproduzirAudioVictroy() {
-        audioVictory.play()
-}
-
 const audioJogo = document.getElementById('trilhaSonora')
 audioJogo.loop = true
 function trilhaSonora() {
         audioJogo.play()
 }
-//Criação da variavel do vilão
+
+const audioVitoria = document.getElementById('audioVictory') 
+audioVitoria.loop = true
+function victory() {
+        audioVitoria.play()
+}
+
+const battleAudio = document.getElementById('battleAudio')
+battleAudio.loop = true
+function audioBattle() {
+        battleAudio.play()
+}
+
+const vitoriaMakoto = document.getElementById('vitoriaMakoto')
+vitoriaMakoto.loop = true
+function makotoVictory() {
+        vitoriaMakoto.play()
+}
+
 const realoadYes = document.querySelector('.sim-repete') 
 realoadYes.addEventListener('click', function() {
+        location.reload()
+})
+
+const realoadYes2 = document.querySelector('.sim-repete2')
+realoadYes2.addEventListener('click', function () {
         location.reload()
 })
 
@@ -33,9 +50,18 @@ const Heroi = {
         vida: 7000
 }
 
-function ataqueInimigo() {
-        return Math.floor(Math.random() * 1100) + 6000
+function ataqueInimigo(min, max) {
+        if (min < 0) {
+                min = 0
+        }
+        if (max < min) {
+                max = min
+        }
+        const random = Math.random()
+        const resultado = Math.floor(random * (max - min + 1) + min)
+        return resultado;
 }
+const dano = ataqueInimigo(1000, 7000);
 
 //criação das variaveis das resposta do programa
 //Função para processeguir o procedimento de ataque e subtrair uma por uma em cada variavel e com base na sobra ele desconta na proxima variavel
@@ -56,7 +82,9 @@ function lutem(powerAtaqueUSer) {
         const userDerrot = document.querySelector('#You-failed')
         const userGain = document.querySelector('#You-gain')
 
-        if (vilao.shield >= powerAtaqueUSer && userGain.style.display === 'none' &&userDerrot.style.display === 'none' && ryuDefender.style.display === 'none' && derrotaRyu.style.display === 'none' && vilaoSoco.style.display === 'none' && vidaHeroi.style.display === 'none' && vidaVilao.style.display === 'block' && vidaVilaoEscudo.style.display === 'none' && vidaVilaoDefesa.style.display === 'none' && vidaVilaoVida.style.display === 'none' && ryuLutador.style.display === 'block' && socoUser.style.display === 'none' && venomDefender.style.display === 'none' && venomVilao.style.display === 'block' && venomDerrotado.style.display === 'none') {
+        battleAudio.play()
+        audioJogo.pause()
+        if (vilao.shield >= powerAtaqueUSer && userGain.style.display === 'none' && userDerrot.style.display === 'none' && ryuDefender.style.display === 'none' && derrotaRyu.style.display === 'none' && vilaoSoco.style.display === 'none' && vidaHeroi.style.display === 'none' && vidaVilao.style.display === 'block' && vidaVilaoEscudo.style.display === 'none' && vidaVilaoDefesa.style.display === 'none' && vidaVilaoVida.style.display === 'none' && ryuLutador.style.display === 'block' && socoUser.style.display === 'none' && venomDefender.style.display === 'none' && venomVilao.style.display === 'block' && venomDerrotado.style.display === 'none') {
                 vilao.shield -= powerAtaqueUSer
                 vidaVilaoEscudo.style.display = 'block'
                 venomDefender.style.display = 'block'
@@ -103,11 +131,10 @@ function lutem(powerAtaqueUSer) {
                 console.log(`Escudo zerado, defesa zerado ${vilao.defesa}! Vida restante ${vilao.vida}`)
         } else {
                 let vezDoJogador = true
-                while (Heroi.vida > 0 && vilao.vida > 0) {
+                while (Heroi.vida >= 0 && vilao.vida >= 0) {
                         if (vezDoJogador) {
                                 socoUser.style.display = 'block'
                                 venomDefender.style.display = 'block'
-                                vidaVilaoVida.style.display = 'block'
                                 venomDerrotado.style.display = 'none'
                                 ryuDefender.style.display = 'none'
                                 derrotaRyu.style.display = 'none'
@@ -116,37 +143,47 @@ function lutem(powerAtaqueUSer) {
                                 vilao.vida -= powerAtaqueUSer    
                                 vezDoJogador = false;
                         } else {
-                                const dano = ataqueInimigo();
                                 console.log(`O inimigo causou ${dano} de dano em você.`);
                                 Heroi.vida -= dano;
                                 vezDoJogador = true;
-                                vidaHeroi.style.display = 'block'
                                 vilaoSoco.style.display = 'block'
                                 ryuDefender.style.display = 'block'
                                 derrotaRyu.style.display = 'none'
                                 socoUser.style.display = 'none'
                                 venomDefender.style.display = 'none'
+                                console.log(`O inimigo causou ${dano} de dano em você. Vida restante ${dano}`);
                         }
-                console.log(`Ataque de ${powerAtaqueUSer}! Vida restante: ${vilao.vida}`)
+                        console.log(`Ataque de ${powerAtaqueUSer}! Vida restante: ${Heroi.vida}`)
                 } 
         }
-        if (vilao.vida == 0) {
+        if (vilao.vida <= 0) {
                 vidaVilaoEscudo.style.display = 'none'
                 vidaVilaoDefesa.style.display = 'none'
                 venomDefender.style.display = 'none'
                 ryuLutador.style.display = 'none'
                 venomVilao.style.display = 'none'
-                vidaVilao.style.display = 'none'
                 socoUser.style.display = 'none'
                 derrotaRyu.style.display = 'none'
                 venomDerrotado.style.display = 'block'
                 userGain.style.display = 'block'
+                vidaVilaoVida.style.display = 'block'
                 audioSoco.pause()
-                trilhaSonora()
                 audioJogo.pause()
+                audioVitoria.play()
+                battleAudio.pause()
+                console.log(`Ataque de ${powerAtaqueUSer}! Vida restante: ${vilao.vida}`)
+        } else if(Heroi.vida <= 0) {
                 console.log('vilao Derrotado!')
-        } else if(Heroi.vida == 0) {
+                vilaoSoco.style.display = 'none'
+                ryuDefender.style.display = 'none'
+                derrotaRyu.style.display = 'none'
+                socoUser.style.display = 'none'
+                venomDefender.style.display = 'none'
+                vidaHeroi.style.display = 'block'
                 userDerrot.style.display = 'block'
+                audioSoco.pause()
+                battleAudio.pause()
+                vitoriaMakoto.play()
         }
 }
 

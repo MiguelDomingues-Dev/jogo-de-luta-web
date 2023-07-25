@@ -312,6 +312,7 @@ img {
 
 #barra-vida-6 {
     position: absolute;
+    display: none;
     width: 12.9375rem;
     height: 0.4375rem;
     background-color: #ffffff22;
@@ -755,4 +756,15 @@ img {
     width: 5rem;
     height: 3rem;
     cursor: pointer;
+}
+
+#makoto-win {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    left: 695px;
+    top: 71px;
+    background-image: url(./image/makoto-vitoria.webp);
+    background-repeat: no-repeat;
+    background-size: 18rem;
 }
