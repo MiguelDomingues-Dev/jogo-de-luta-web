@@ -334,7 +334,7 @@ img {
     background-image: url(image-frame/ryump-1.png);
     background-repeat: no-repeat;
     background-size: 19.875rem;
-    animation: luta 900ms steps(8) infinite;
+    animation: luta 650ms steps(8) infinite;
 }
 
 @keyframes luta {
@@ -367,11 +367,11 @@ img {
 #escudo-defender {
     position: absolute;
     display: none;
-    left: 700px;
-    top: -110px;
+    left: 680px;
+    top: -65px;
     width: 15.875rem;
     height: 25.40113rem;
-    background-image: url(./image/makoto-dizzy3.0.gif);
+    background-image: url(./image/makoto-defender2.0.gif);
     background-size: 15rem;
     background-repeat: no-repeat;
 }
@@ -471,7 +471,7 @@ img {
     top: -69px;
     width: 25.875rem;
     height: 25.40113rem;
-    background-image: url(./image-frame/frame-makoto-stance/frame-derrotado/frame1.png);
+    background-image: url(./image-frame/frame-makoto-stance/frame-derrotado/frame28.png);
     background-size: 24.5rem;
     background-repeat: no-repeat;
     animation: derrota 5s steps(28);
@@ -592,6 +592,7 @@ img {
 
 #You-gain {
     position: absolute;
+    display: none;
     left: 10px;
     top: 10px;
     width: 20rem;
@@ -600,7 +601,6 @@ img {
 
 #You-gain > .ryu-win {
     position: absolute;
-    display: none;
     left: 395px;
     top: 55px;
     width: 15rem;
@@ -609,10 +609,150 @@ img {
 
 #You-gain > .ganhador-img {
     position: absolute;
-    display: none;
     left: 50%;
     top: 50%;
     transform: translate(169%, -50%);
     width: 15rem;
     height: 15rem;
+}
+
+#You-gain > .sim-repete2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(620%, 135%);
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+#defender-ryu {
+    position: absolute;
+    display: none;
+    width: 25rem;
+    height: 25rem;
+    left: 450px;
+    top: -50px;
+    background-image: url(./image/ryu-block.gif);
+    background-repeat: no-repeat;
+    background-size: 9rem;
+}
+
+#derrotado-ryu {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    left: 410px;
+    top: 105px;
+    background-image: url(./image-frame/frame-ryu/frame25.png);
+    background-repeat: no-repeat;
+    background-size: 18rem;
+    animation: defender 5s steps(25);
+}
+
+
+@keyframes defender {
+    0% {
+        background-image: url(./image-frame/frame-ryu/frame1.png);
+    }
+    4.166666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame2.png);
+    }
+    8.333333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame3.png);
+    }
+    12.5% {
+        background-image: url(./image-frame/frame-ryu/frame4.png);
+    }
+    16.66666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame5.png);
+    }
+    20.83333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame6.png);
+    }
+    25% {
+        background-image: url(./image-frame/frame-ryu/frame7.png);
+    }
+    29.16666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame8.png);
+    }
+    33.33333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame9.png);
+    }
+    37.5% {
+        background-image: url(./image-frame/frame-ryu/frame10.png);
+    }
+    41.66666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame11.png);
+    }
+    45.83333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame12.png);
+    }
+    50% {
+        background-image: url(./image-frame/frame-ryu/frame13.png);
+    }
+    54.16666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame14.png);
+    }
+    58.33333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame15.png);
+    }
+    62.50000000000001% {
+        background-image: url(./image-frame/frame-ryu/frame16.png);
+    }
+    66.66666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame17.png);
+    }
+    70.83333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame18.png);
+    }
+    75.00000000000001% {
+        background-image: url(./image-frame/frame-ryu/frame19.png);
+    }
+    79.16666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame20.png);
+    }
+    83.33333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame21.png);
+    }
+    87.50000000000001% {
+        background-image: url(./image-frame/frame-ryu/frame22.png);
+    }
+    91.66666666666667% {
+        background-image: url(./image-frame/frame-ryu/frame23.png);
+    }
+    95.83333333333334% {
+        background-image: url(./image-frame/frame-ryu/frame24.png);
+    }
+    100% {
+        background-image: url(./image-frame/frame-ryu/frame25.png);
+    }
+}
+
+#You-failed {
+    position: absolute;
+    display: none;
+    left: 10px;
+    top: 10px;
+    width: 20rem;
+    height: 20rem;
+}
+
+#You-failed > .perded {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(169%, -95%);
+    width: 15rem;
+    height: 15rem;
+}
+
+#You-failed > .sim-repete {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(615%, 60%);
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
 }

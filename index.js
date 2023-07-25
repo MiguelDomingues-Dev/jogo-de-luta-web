@@ -1,4 +1,28 @@
+const audioSoco = document.getElementById('audioSoco')
+const socoAnimado = document.getElementById('ryu-user-soco')
+socoAnimado.style.animation = 'animation: luta 900ms steps(8) infinite'
+audioSoco.loop = true
+function reproduzirComAudio() {
+        audioSoco.play()
+}
+
+const audioVictory = document.getElementById('audioVictory')
+audioVictory = true
+function reproduzirAudioVictroy() {
+        audioVictory.play()
+}
+
+const audioJogo = document.getElementById('trilhaSonora')
+audioJogo.loop = true
+function trilhaSonora() {
+        audioJogo.play()
+}
 //Criação da variavel do vilão
+const realoadYes = document.querySelector('.sim-repete') 
+realoadYes.addEventListener('click', function() {
+        location.reload()
+})
+
 const vilao = {
         vida: 5000,
         defesa: 500,
@@ -7,14 +31,6 @@ const vilao = {
 
 const Heroi = {
         vida: 7000
-}
-
-//Função para calcular quando o usuario digitar o valor total, dá soma entre a vida, defesa e escudo do vilão
-function calcularDano(powerAtaqueUSer) {
-        const poderTotal = vilao.vida + vilao.defesa + vilao.shield
-        if (powerAtaqueUSer <= poderTotal) {
-                console.log(`Ataque fatal! Vilão derrotado instantaneamente!`)
-        }
 }
 
 function ataqueInimigo() {
@@ -34,11 +50,13 @@ function lutem(powerAtaqueUSer) {
         const venomDefender = document.getElementById('escudo-defender')
         const venomVilao = document.getElementById('robo-vilao')
         const venomDerrotado = document.getElementById('derrotado')
-        const heroiVencedor = document.querySelector('.ryu-win')
-        const youWinUser = document.querySelector('.ganhador-img')
         const vilaoSoco = document.getElementById('vilao-soco')
+        const ryuDefender = document.getElementById('defender-ryu')
+        const derrotaRyu = document.getElementById('derrotado-ryu')
+        const userDerrot = document.querySelector('#You-failed')
+        const userGain = document.querySelector('#You-gain')
 
-        if (vilao.shield >= powerAtaqueUSer && vilaoSoco.style.display === 'none' && vidaHeroi.style.display === 'none' && youWinUser.style.display === 'none' && heroiVencedor.style.display === 'none' && vidaVilao.style.display === 'block' && vidaVilaoEscudo.style.display === 'none' && vidaVilaoDefesa.style.display === 'none' && vidaVilaoVida.style.display === 'none' && ryuLutador.style.display === 'block' && socoUser.style.display === 'none' && venomDefender.style.display === 'none' && venomVilao.style.display === 'block' && venomDerrotado.style.display === 'none') {
+        if (vilao.shield >= powerAtaqueUSer && userGain.style.display === 'none' &&userDerrot.style.display === 'none' && ryuDefender.style.display === 'none' && derrotaRyu.style.display === 'none' && vilaoSoco.style.display === 'none' && vidaHeroi.style.display === 'none' && vidaVilao.style.display === 'block' && vidaVilaoEscudo.style.display === 'none' && vidaVilaoDefesa.style.display === 'none' && vidaVilaoVida.style.display === 'none' && ryuLutador.style.display === 'block' && socoUser.style.display === 'none' && venomDefender.style.display === 'none' && venomVilao.style.display === 'block' && venomDerrotado.style.display === 'none') {
                 vilao.shield -= powerAtaqueUSer
                 vidaVilaoEscudo.style.display = 'block'
                 venomDefender.style.display = 'block'
@@ -46,9 +64,11 @@ function lutem(powerAtaqueUSer) {
                 vidaVilaoDefesa.style.display = 'none'
                 vidaVilaoVida.style.display = 'none'
                 venomDerrotado.style.display = 'none'
+                ryuDefender.style.display = 'none'
                 ryuLutador.style.display = 'none'
                 venomVilao.style.display = 'none'
                 vidaVilao.style.display = 'none'
+                derrotaRyu.style.display = 'none'
                 console.log(`${powerAtaqueUSer} ${vilao.shield}`)
         } else if (vilao.shield > 0) {
                 const danoAposEscudo = vilao.shield - vilao.shield
@@ -60,7 +80,9 @@ function lutem(powerAtaqueUSer) {
                 vidaVilaoDefesa.style.display = 'none'
                 venomDerrotado.style.display = 'none'
                 vidaVilaoVida.style.display = 'none'
+                ryuDefender.style.display = 'none'
                 ryuLutador.style.display = 'none'
+                derrotaRyu.style.display = 'none'
                 venomVilao.style.display = 'none'
                 vidaVilao.style.display = 'none'
                 console.log(`Escudo zerado ${vilao.shield}, Falta passar pela a ${vilao.defesa} defesa. Vida restante ${vilao.vida}`)
@@ -71,7 +93,9 @@ function lutem(powerAtaqueUSer) {
                 socoUser.style.display = 'block'
                 vidaVilaoEscudo.style.display = 'none'
                 vidaVilaoVida.style.display = 'none'
+                ryuDefender.style.display = 'none'
                 ryuLutador.style.display = 'none'
+                derrotaRyu.style.display = 'none'
                 venomVilao.style.display = 'none'
                 vidaVilao.style.display = 'none'
                 vilao.defesa = 0
@@ -81,14 +105,14 @@ function lutem(powerAtaqueUSer) {
                 let vezDoJogador = true
                 while (Heroi.vida > 0 && vilao.vida > 0) {
                         if (vezDoJogador) {
-                                const dano = ataqueInimigo();
                                 socoUser.style.display = 'block'
                                 venomDefender.style.display = 'block'
                                 vidaVilaoVida.style.display = 'block'
-                                venomDerrotado.style.display = 'block'
-                                heroiVencedor.style.display = 'block'
-                                youWinUser.style.display = 'block'
-                                console.log(`Você causou ${dano} de dano no inimigo.`);
+                                venomDerrotado.style.display = 'none'
+                                ryuDefender.style.display = 'none'
+                                derrotaRyu.style.display = 'none'
+                                vidaHeroi.style.display = 'none'
+                                vilaoSoco.style.display = 'none'
                                 vilao.vida -= powerAtaqueUSer    
                                 vezDoJogador = false;
                         } else {
@@ -98,11 +122,15 @@ function lutem(powerAtaqueUSer) {
                                 vezDoJogador = true;
                                 vidaHeroi.style.display = 'block'
                                 vilaoSoco.style.display = 'block'
+                                ryuDefender.style.display = 'block'
+                                derrotaRyu.style.display = 'none'
+                                socoUser.style.display = 'none'
+                                venomDefender.style.display = 'none'
                         }
                 console.log(`Ataque de ${powerAtaqueUSer}! Vida restante: ${vilao.vida}`)
-        } 
+                } 
         }
-        if (vilao.vida <= 0) {
+        if (vilao.vida == 0) {
                 vidaVilaoEscudo.style.display = 'none'
                 vidaVilaoDefesa.style.display = 'none'
                 venomDefender.style.display = 'none'
@@ -110,7 +138,15 @@ function lutem(powerAtaqueUSer) {
                 venomVilao.style.display = 'none'
                 vidaVilao.style.display = 'none'
                 socoUser.style.display = 'none'
+                derrotaRyu.style.display = 'none'
+                venomDerrotado.style.display = 'block'
+                userGain.style.display = 'block'
+                audioSoco.pause()
+                trilhaSonora()
+                audioJogo.pause()
                 console.log('vilao Derrotado!')
+        } else if(Heroi.vida == 0) {
+                userDerrot.style.display = 'block'
         }
 }
 
@@ -121,6 +157,6 @@ function receberNameUser() {
 //Função criada para puxar as outras funções e criar a ação de click no botom do doc HTML e executar o código.
 function enter() {
         const powerAtaqueUSer = parseInt(document.getElementById('atk').value)
-        calcularDano(powerAtaqueUSer)
+        reproduzirComAudio()
         lutem(powerAtaqueUSer)
 } 

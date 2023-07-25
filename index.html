@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+        <audio id="trilhaSonora" src=".//audio/Super Street Fighter II Turbo Arcade Music - Ken Stage - CPS2 (128 kbps).mp3"></audio>
     <div id="container-box-game">
         <div class="content-box-game">
             <div class="box-lutador">
@@ -53,12 +54,14 @@
                         <input placeholder="POWER" type="number" name="atk" id="atk">
                     </span>
                     <span id="ryu-user-soco"></span>
+                    <span id="defender-ryu"></span>
                 </div>
                 <div class="box-jogador-robo">
                     <span id="robo-vilao" class="lutador-robo-hype">
                         <img src="./image/makoto-stance3.0.gif" alt="Imagem de um vilão da marvel">
                     </span>
-                    span <div id="vilao-soco"></div>
+                    <audio id="audioSoco" src="./audio/Som de soco (128 kbps).mp3"></audio>
+                    <div id="vilao-soco"></div>
                     <span id="escudo-defender"></span>
                     <span id="derrotado"></span>
                 </div>
@@ -67,7 +70,18 @@
         <div id="You-gain">
             <img class="ganhador-img" src="./image/you-win2.0.png" alt="Imagem de ganhador com troféu">
             <img class="ryu-win" src="./image/ryu-win.gif" alt="ryu gif dele ganhando">
+            <img class="sim-repete2" src="./image/yes.png" alt="Imagem de alternância">
+            <audio id="audioVictory" src="./audio/Rocky - Victory song_Musica da vitória (128 kbps).mp3"></audio>
         </div>
+        <div id="You-failed">
+            <img class="perded" src="./image/gamer-over2.0.png" alt="perdedor">
+            <span id="derrotado-ryu"></span>
+            <img class="sim-repete" src="./image/yes.png" alt="Imagem de alternância">
+        </div>
+        <span id="barra-vida-3"></span>
+        <span id="barra-vida-4"></span>
+        <span id="barra-vida-5"></span>
+        <span id="barra-vida-6"></span>
         <div id="box-dados-user">
             <h1>Crie um nome para o seu lutador:</h1>
             <br>
@@ -76,10 +90,6 @@
                 LUTEM
             </span>
         </div>
-        <span id="barra-vida-3"></span>
-        <span id="barra-vida-4"></span>
-        <span id="barra-vida-5"></span>
-        <span id="barra-vida-6"></span>
     </main>
     <script src="index.js"></script>
 </body>
