@@ -19,7 +19,7 @@ body, html {
     position: relative;
     width: 100vw;
     height: 21.875rem;
-    background-image: url(./image/fundo-luta-wd.jpg);
+    background-image: url(./image/background-de-luta.gif);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

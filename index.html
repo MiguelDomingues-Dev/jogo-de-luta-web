@@ -8,7 +8,6 @@
     <title>Jogo de luta</title>
 </head>
 <body>
-    <header>
         <audio id="trilhaSonora" src=".//audio/Super Street Fighter II Turbo Arcade Music - Ken Stage - CPS2 (128 kbps).mp3" autoplay></audio>
     <div id="container-box-game">
         <div class="content-box-game">
@@ -43,16 +42,11 @@
             </div>
         </div>
     </div>
-    </header>
-    <main>
         <div id="container">
             <div class="contet-lutadores">
                 <div class="box-jogador-user">
                     <span class="lutador-user-hype">
                         <img id="lutador" src="./image/ryu-streetfighter.gif" alt="Imagem de um lutador dos Anos 80">
-                    </span>
-                    <span class="power-ataque">
-                        <input placeholder="POWER" type="number" name="atk" id="atk">
                     </span>
                     <span id="ryu-user-soco"></span>
                     <span id="defender-ryu"></span>
@@ -62,7 +56,7 @@
                         <img src="./image/makoto-stance3.0.gif" alt="Imagem de um vilão da marvel">
                     </span>
                     <audio id="audioSoco" src="./audio/Som de soco (128 kbps).mp3"></audio>
-                    <div id="vilao-soco"></div>
+                    <span id="vilao-soco"></span>
                     <span id="escudo-defender"></span>
                     <span id="derrotado"></span>
                 </div>
@@ -93,7 +87,6 @@
                 LUTEM
             </span>
         </div>
-    </main>
     <script src="index.js"></script>
 </body>
 </html>

@@ -6,3 +6,16 @@
     box-sizing: border-box;
 }
 
+body, html {
+    
+}
+
+.lutador-user {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background: lightgray 0px -0.144px / 88.333% 100.364% no-repeat;
+    border: 1px solid #FFFfff;
+    width: 6.875rem;
+    height: 4.9375rem;
+}
