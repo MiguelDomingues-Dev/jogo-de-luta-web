@@ -1,9 +1,9 @@
-const audioSoco = document.getElementById('audioSoco')
-const socoAnimado = document.getElementById('ryu-user-soco')
-audioSoco.loop = true
-function reproduzirComAudio() {
-        audioSoco.play()
-}
+// const audioSoco = document.getElementById('audioSoco')
+// const socoAnimado = document.getElementById('ryu-user-soco')
+// audioSoco.loop = true
+// function reproduzirComAudio() {
+//         audioSoco.play()
+// }
 
 const audioJogo = document.getElementById('trilhaSonora')
 audioJogo.loop = true
@@ -79,6 +79,7 @@ function atacar(atacante, alvo) {
 }
 
 const vidaUserFull = document.querySelector('.barra-vida')
+const vidaVazioVilao = document.getElementById('barra-vida2')
 const ryuLutador = document.getElementById('lutador')
 const socoUser = document.getElementById('ryu-user-soco')
 const venomDefender = document.getElementById('escudo-defender')
@@ -104,7 +105,12 @@ function lutar(Heroi, vilao) {
                         console.log(`${vilao.nome} foi derrotado! ${Heroi.nome} Venceu a luta`)
                         vidaVilaoVida.style.display = 'block'
                         userGain.style.display = 'block'
-                        audioVitoria.play()
+                        venomDerrotado.style.display = 'block'
+                        venomVilao.style.display = 'none'
+                        ryuLutador.style.display = 'none'
+                        vidaVazioVilao.style.display = 'none'
+                        victory()
+                        audioJogo.pause()
                         break;
                 }
                 //Vez do Vilão atacar
@@ -114,6 +120,12 @@ function lutar(Heroi, vilao) {
                         console.log(`${Heroi.nome} foi derrotado! ${vilao.nome} Venceu a luta`)
                         vidaHeroi.style.display = 'block'
                         userDerrot.style.display = 'block'
+                        venomVilao.style.display = 'none'
+                        ryuLutador.style.display = 'none'
+                        vidaUserFull.style.display = 'none'
+                        audioVitoria.pause()
+                        audioJogo.pause()
+                        makotoVictory()
                         break;
 
                 }
@@ -132,5 +144,4 @@ const vilao = new Personagem("Makoto", 5750, dano);
 //Função criada para puxar as outras funções e criar a ação de click no botom do doc HTML e executar o código.
 function enter() {
         lutar(Heroi, vilao)
-        reproduzirComAudio()
 } 
